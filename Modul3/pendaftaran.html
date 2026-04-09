@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Halaman Pendaftaran</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
+        header {
+            background-color: #1a1a2e;
+            padding: 28px;
+            text-align: center;
+            font-size: 28px;
+            color: #e0d7ff;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        nav {
+            float: left;
+            width: 220px;
+            min-height: 600px;
+            background: #16213e;
+            padding: 24px 16px;
+        }
+        nav ul { list-style-type: none; padding: 0; }
+        nav ul li { margin-bottom: 6px; }
+        nav ul li a {
+            display: block;
+            padding: 8px 14px;
+            text-decoration: none;
+            color: #a8b4d8;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+        nav ul li a:hover { background: #0f3460; color: #e0d7ff; }
+        nav ul li a.active { background: #7c3aed; color: #fff; }
+        article {
+            float: left;
+            padding: 32px;
+            width: calc(100% - 220px);
+            background-color: #f5f3ff;
+            min-height: 700px;
+        }
+        article h1 {
+            font-size: 22px;
+            color: #3b0764;
+            margin-bottom: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #c4b5fd;
+        }
+        fieldset {
+            border: none;
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 4px rgba(109,40,217,0.07);
+        }
+        legend {
+            font-weight: 600;
+            font-size: 13px;
+            color: #7c3aed;
+            padding: 0 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .form-row { margin-top: 14px; }
+        .form-row label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+            color: #5b21b6;
+            font-weight: 500;
+        }
+        .form-row input[type="text"],
+        .form-row input[type="tel"],
+        .form-row input[type="email"],
+        .form-row input[type="date"],
+        .form-row input[type="time"] {
+            padding: 8px 12px;
+            border: 1.5px solid #ddd6fe;
+            border-radius: 8px;
+            width: 280px;
+            font-size: 14px;
+            background: #faf5ff;
+            color: #1e1b4b;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .form-row input:focus {
+            outline: none;
+            border-color: #7c3aed;
+            background: #fff;
+        }
+        .form-row input[type="range"] { accent-color: #7c3aed; }
+        .form-row small { color: #8b5cf6; font-size: 12px; display: block; margin-top: 4px; }
+        .range-val {
+            display: inline-block;
+            background: #7c3aed;
+            color: #fff;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 2px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+        }
+        input[type="submit"] {
+            background: #7c3aed;
+            color: #fff;
+            border: none;
+            padding: 10px 30px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+        input[type="submit"]:hover { background: #6d28d9; }
+        .info-bar {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #6d28d9;
+            background: #ede9fe;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border-left: 3px solid #7c3aed;
+        }
+        section::after { content: ""; display: table; clear: both; }
+        footer {
+            background-color: #7c3aed;
+            padding: 12px;
+            text-align: center;
+            color: #ede9fe;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <header>HTML Lanjut</header>
+    <section>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gambar.html">Gambar</a></li>
+                <li><a href="event.html">Event</a></li>
+                <li><a href="audio.html">Audio</a></li>
+                <li><a href="video.html">Video</a></li>
+                <li><a href="svg.html">SVG</a></li>
+                <li><a href="canvas.html">Canvas</a></li>
+                <li><a href="pendaftaran.html" class="active">Pendaftaran</a></li>
+            </ul>
+        </nav>
+        <article>
+            <h1>Form Penjadwal Pertemuan</h1>
+            <form action="#" method="POST">
+                <fieldset>
+                    <legend>Informasi Pribadi</legend>
+                    <div class="form-row">
+                        <label>Nama</label>
+                        <input type="text" name="nama" required>
+                    </div>
+                    <div class="form-row">
+                        <label>No. Telepon</label>
+                        <input type="tel" name="telepon"
+                               pattern="\d{4}-\d{6}"
+                               placeholder="0812-345678"
+                               title="Format: XXXX-XXXXXX"
+                               required>
+                    </div>
+                    <div class="form-row">
+                        <label>Alamat Email</label>
+                        <input type="email" name="email"
+                               placeholder="nama@domain.com" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Tanggal Lahir</label>
+                        <input type="date" name="tgl_lahir"
+                               min="1987-01-01" max="1993-01-01" required>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Permintaan Pertemuan</legend>
+                    <div class="form-row">
+                        <label>Tujuan Pertemuan</label>
+                        <input type="text" name="tujuan" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Tingkat Kepentingan Pertemuan</label><br>
+                        <input type="range" name="kepentingan"
+                               min="0" max="10" value="5"
+                               oninput="document.getElementById('nilai').textContent = this.value">
+                        <span class="range-val" id="nilai">5</span>
+                        <small>0 = Tidak Penting | 10 = Mendesak</small>
+                    </div>
+                    <div class="form-row">
+                        <label>Tanggal</label>
+                        <input type="date" id="tanggal" name="tanggal" required>
+                    </div>
+                    <div class="form-row">
+                        <label>Waktu</label>
+                        <input type="time" name="waktu"
+                               min="17:00" max="21:00" required>
+                        <small>15.00 - 21.00 WIB</small>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Submit">
+            </form>
+            <div class="info-bar">
+                <strong>NIM:</strong> 253307028 &nbsp;|&nbsp; <strong>Nama:</strong> Shafira Rahmaningtyas
+            </div>
+        </article>
+    </section>
+    <footer><p>copyright@shafirahma</p></footer>
+    <script>
+        var today = new Date();
+        today.setDate(today.getDate() + 1);
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0');
+        var yyyy = today.getFullYear();
+        document.getElementById('tanggal').min = yyyy + '-' + mm + '-' + dd;
+    </script>
+</body>
+</html>

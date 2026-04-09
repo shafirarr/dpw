@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<style>
+.menu {
+    background-color: #3498db;
+    color: white;
+    padding: 12px;
+    cursor: pointer;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.submenu {
+    display: none;
+    background-color: #ecf0f1;
+    width: 200px;
+    border-radius: 5px;
+}
+
+.submenu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.submenu a:hover {
+    background-color: #bdc3c7;
+}
+</style>
+</head>
+<body>
+
+<div class="menu">☰ Menu</div>
+
+<div class="submenu">
+    <a href="index.html">Home</a>
+    <a href="galeri.html">Galeri</a>
+    <a href="profil.html">Profil</a>
+    <a href="kontak.html">Kontak</a>
+</div>
+
+<script>
+$(".menu").click(function(){
+    $(".submenu").slideToggle();
+});
+</script>
+
+</body>
+</html>

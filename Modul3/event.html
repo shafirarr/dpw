@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouse Event Gambar</title>
+
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px;
+            border: 3px solid transparent;
+            transition: 0.3s;
+        }
+    </style>
+
+    <script>
+        function masuk(gambar) {
+            gambar.style.border = "3px solid red";
+            gambar.style.transform = "scale(1.1)";
+        }
+
+        function keluar(gambar) {
+            gambar.style.border = "3px solid transparent";
+            gambar.style.transform = "scale(1)";
+        }
+
+        function klik() {
+            alert("Gambar diklik!");
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Mouse Event pada Gambar</h1>
+
+    <p>Arahkan mouse atau klik gambar berikut:</p>
+
+    <img src="gambar1.jpg"
+         alt="Gambar 1"
+         onmouseover="masuk(this)"
+         onmouseout="keluar(this)"
+         onclick="klik()">
+
+    <img src="gambar2.jpg"
+         alt="Gambar 2"
+         onmouseover="masuk(this)"
+         onmouseout="keluar(this)"
+         onclick="klik()">
+
+    <img src="gambar3.jpg"
+         alt="Gambar 3"
+         onmouseover="masuk(this)"
+         onmouseout="keluar(this)"
+         onclick="klik()">
+
+    <p><i>Kesimpulan: Mouse event dapat digunakan untuk memberikan efek saat gambar disentuh atau diklik.</i></p>
+
+</body>
+</html>
